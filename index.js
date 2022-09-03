@@ -12,7 +12,7 @@ const playRound = (playerSelection, computerSelection) => {
   const downCasePlayerSelection = playerSelection.toLowerCase().replace(/\s/g, '');
   const downCaseComputerSelection = computerSelection.toLowerCase();
   if (!Object.keys(objWinner).includes(downCasePlayerSelection)) {
-    return 'please enter a valid value';
+    return false;
   }
   if (objWinner[downCasePlayerSelection] === downCaseComputerSelection) {
     result.computer += 1;
@@ -34,9 +34,17 @@ const game = () => {
   let playerGameSelection;
   let computerGameSelection;
   for (let i = 0; i < 5; i += 1) {
-    playerGameSelection = prompt('Plase choose (Rock or Paper or scissors) ');
-    computerGameSelection = computerPlay();
-    console.log(playRound(playerGameSelection, computerGameSelection));
+    let flag = true;
+    while (flag) {
+      playerGameSelection = prompt('Plase choose (Rock or Paper or scissors) ');
+      computerGameSelection = computerPlay();
+      if (!playRound(playerGameSelection, computerGameSelection)) {
+        console.log('please enter a valid value');
+      } else {
+        console.log(playRound(playerGameSelection, computerGameSelection));
+        flag = false;
+      }
+    }
   }
   console.log(resultText);
 };
