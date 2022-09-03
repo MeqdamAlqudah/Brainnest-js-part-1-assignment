@@ -9,7 +9,7 @@ const objWinner = { rock: 'paper', paper: 'scissors', scissors: 'rock' };
 const result = { player: 0, computer: 0 };
 
 const playRound = (playerSelection, computerSelection) => {
-  const downCasePlayerSelection = playerSelection.toLowerCase();
+  const downCasePlayerSelection = playerSelection.toLowerCase().replace(/\s/g, '');
   const downCaseComputerSelection = computerSelection.toLowerCase();
   if (!Object.keys(objWinner).includes(downCasePlayerSelection)) {
     return 'please enter a valid value';
