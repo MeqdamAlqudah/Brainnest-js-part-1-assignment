@@ -26,7 +26,6 @@ const playRound = (playerSelection, computerSelection) => {
 };
 
 const game = () => {
-  const resultText = result.player > result.computer ? 'You won the game!!' : 'You lost the game!!';
   let playerGameSelection;
   let computerGameSelection;
   for (let i = 0; i < 5; i += 1) {
@@ -42,7 +41,7 @@ const game = () => {
       }
     }
   }
-  console.log(resultText);
+  console.log(result.player > result.computer ? 'You won the game!!' : 'You lost the game!!');
 };
 
 game();
