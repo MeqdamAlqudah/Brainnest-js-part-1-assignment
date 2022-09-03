@@ -25,10 +25,6 @@ const playRound = (playerSelection, computerSelection) => {
   return `You Win! ${downCasePlayerSelection} beats ${downCaseComputerSelection}`;
 };
 
-const playerSelection = 'rock';
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
-
 const game = () => {
   const resultText = result.player > result.computer ? 'You won the game!!' : 'You lost the game!!';
   let playerGameSelection;
