@@ -1,4 +1,4 @@
-const objChoice = { 0: 'Rock', 1: 'Paper', 2: 'Scissors' };
+const objChoice = ['Rock', 'Paper', 'Scissors'];
 const computerPlay = () => {
   const choice = Math.floor(Math.random() * 3);
   return objChoice[choice];
